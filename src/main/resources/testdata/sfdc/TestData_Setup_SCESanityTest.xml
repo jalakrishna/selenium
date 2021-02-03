@@ -1,0 +1,273 @@
+<SFDCObjectList>
+<TestCase1>
+<TestDataSet1>
+	<sfdcObject type="Account" key="Account1">
+		<Name>[@TEST_UNIQ_NAME]</Name>
+		<NumberOfEmployees type="integer">10</NumberOfEmployees>
+		<RecordTypeId replacewithSFId="true">Sales</RecordTypeId> 
+		<SupportLevel__c>Basic</SupportLevel__c>
+		<Current_Account_AOV__c>50000</Current_Account_AOV__c>
+   		<SoldDate__c>[@TODAY]</SoldDate__c>
+		<CFL_Region__c>AMER CBU East</CFL_Region__c>
+		<Type>Prospect</Type>
+		<ShippingStreet>100 Fremont</ShippingStreet>
+		<ShippingCity>Fremont</ShippingCity>
+		<ShippingState>CA</ShippingState>
+		<ShippingPostalCode>94538</ShippingPostalCode>
+		<ShippingCountry>US</ShippingCountry>
+		<BillingCountry>US</BillingCountry>
+	</sfdcObject>
+	<sfdcObject type="Contact" key="Contact1">
+		<RecordTypeId replacewithSFId="true">Contact</RecordTypeId>
+		<AccountId>[@AccountId]</AccountId>
+		<LastName>[@TEST_UNIQ_NAME]</LastName>
+		<FirstName>[@Test_UNIQ_NAME]</FirstName>
+		<Primary_Contact__c>true</Primary_Contact__c>
+		<Email>qatestingemail@salesforce.com</Email>
+		<Phone>510-111-3333</Phone>
+	</sfdcObject>
+	<sfdcObject type="Contract" key="Contract1">
+		<AccountId>[@AccountId]</AccountId>
+		<RecordTypeId replacewithSFId="true">Sales</RecordTypeId>
+		<Status>Draft</Status>
+		<sfbase__ContractType__c>New</sfbase__ContractType__c>
+		<StartDate>[@TODAY]</StartDate>
+		<ContractTerm type="integer">12</ContractTerm>
+		<CurrencyIsoCode>USD</CurrencyIsoCode>
+		<Pricebook2Id>01s30000000HjCc</Pricebook2Id> <!-- Pric book id for CPQ - Direct- Commercial - Ohan - WW - USD -->
+		<AutoRenewCode>No</AutoRenewCode>
+		<BillingLastName>TestAutomation</BillingLastName>
+		<BillingLanguage>en_US</BillingLanguage>
+		<BillingStreet>1234 test</BillingStreet>
+		<BillingCity>San Francisco</BillingCity>
+		<BillingState>CA</BillingState>
+		<BillingPostalCode>94001</BillingPostalCode>
+		<BillingCountry>US</BillingCountry>
+		<sfbase__PaymentType__c>Check</sfbase__PaymentType__c>
+		<BillingEmail>qatestingemail@salesforce.com</BillingEmail>
+		<ShippingStreet>1234 test</ShippingStreet>
+		<ShippingCity>San Francisco</ShippingCity>
+		<ShippingState>CA</ShippingState>
+		<ShippingPostalCode>94001</ShippingPostalCode>
+		<ShippingCountry>US</ShippingCountry>
+		<PaymentTerm>Net30</PaymentTerm>
+		<sfbase__PO_Number__c>1234</sfbase__PO_Number__c>
+		<OrderPrebillDays type="integer">15</OrderPrebillDays>
+		<sfbase__Billing_Frequency__c>3</sfbase__Billing_Frequency__c>
+		<sfbase__Customer_VAT_Number__c>1234</sfbase__Customer_VAT_Number__c>
+	</sfdcObject>
+	<sfdcObject type="Order" key="Order1">
+		<ContractId>[@ContractId]</ContractId>	
+		<Status>Draft</Status>
+		<RecordTypeId replacewithSFId="true">New Business</RecordTypeId>
+		<EffectiveDate>[@TODAY]</EffectiveDate>
+		<Order_Sub_Type__c>New</Order_Sub_Type__c>
+		<sfbase__CustomerPORequired__c>N/A</sfbase__CustomerPORequired__c>
+		<Type>Add</Type>
+		<Process_SCE__c type="checkbox">True</Process_SCE__c>
+	</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem1">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VWgK</PriceBookEntryId> <!-- This id is for a Standard product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem2">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VWgK</PriceBookEntryId> <!-- This id is for a Standard product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem3">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VWgO</PriceBookEntryId> <!-- This id is for a Premier product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem4">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VXPW</PriceBookEntryId> <!-- This id is for a Premier+ product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem5">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VXPW</PriceBookEntryId> <!-- This id is for a Premier+ product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem6">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u3000000PPQoJ</PriceBookEntryId> <!-- This id is for a Premier points(40) product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem7">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000W8JG</PriceBookEntryId> <!-- This id is for a MC Standard product product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem8">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u3000000L5e60</PriceBookEntryId> <!-- This id is for a Premium product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem9">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VDPY</PriceBookEntryId> <!-- This id is for a Platinum product listed in CPQ price books -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="Contract" key="Contract2">
+		<AccountId>[@AccountId]</AccountId>
+		<RecordTypeId replacewithSFId="true">Sales</RecordTypeId>
+		<Status>Draft</Status>
+		<sfbase__ContractType__c>New</sfbase__ContractType__c>
+		<StartDate>[@TODAY]</StartDate>
+		<ContractTerm type="integer">12</ContractTerm>
+		<CurrencyIsoCode>USD</CurrencyIsoCode>
+		<Pricebook2Id>01s30000000A2dw</Pricebook2Id> <!-- Price book id for 01 - Professional - WW - Commercial -->
+		<AutoRenewCode>No</AutoRenewCode>
+		<BillingLastName>TestAutomation</BillingLastName>
+		<BillingLanguage>en_US</BillingLanguage>
+		<BillingStreet>1234 test</BillingStreet>
+		<BillingCity>San Francisco</BillingCity>
+		<BillingState>CA</BillingState>
+		<BillingPostalCode>94001</BillingPostalCode>
+		<BillingCountry>US</BillingCountry>
+		<sfbase__PaymentType__c>Check</sfbase__PaymentType__c>
+		<BillingEmail>qatestingemail@salesforce.com</BillingEmail>
+		<ShippingStreet>1234 test</ShippingStreet>
+		<ShippingCity>San Francisco</ShippingCity>
+		<ShippingState>CA</ShippingState>
+		<ShippingPostalCode>94001</ShippingPostalCode>
+		<ShippingCountry>US</ShippingCountry>
+		<PaymentTerm>Net30</PaymentTerm>
+		<sfbase__PO_Number__c>1234</sfbase__PO_Number__c>
+		<OrderPrebillDays type="integer">15</OrderPrebillDays>
+		<sfbase__Billing_Frequency__c>3</sfbase__Billing_Frequency__c>
+		<sfbase__Customer_VAT_Number__c>1234</sfbase__Customer_VAT_Number__c>
+	</sfdcObject>
+	<sfdcObject type="Order" key="Order2">
+		<ContractId>[@ContractId]</ContractId>	
+		<Status>Draft</Status>
+		<RecordTypeId replacewithSFId="true">New Business</RecordTypeId>
+		<EffectiveDate>[@TODAY]</EffectiveDate>
+		<Order_Sub_Type__c>New</Order_Sub_Type__c>
+		<sfbase__CustomerPORequired__c>N/A</sfbase__CustomerPORequired__c>
+		<Type>Add</Type>
+		<Process_SCE__c type="checkbox">True</Process_SCE__c>
+	</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem10">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000W8JL</PriceBookEntryId> <!-- This id is for a Standard product listed in 01 - Professional - WW - Commercial -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem11">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u30000002IEVP</PriceBookEntryId> <!-- This id is for a Premier product listed in 01 - Professional - WW - Commercial -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem12">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000VXwD</PriceBookEntryId> <!-- This id is for a Premier+ product listed in 01 - Professional - WW - Commercial -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="Contract" key="Contract3">
+		<AccountId>[@AccountId]</AccountId>
+		<RecordTypeId replacewithSFId="true">Sales</RecordTypeId>
+		<Status>Draft</Status>
+		<sfbase__ContractType__c>New</sfbase__ContractType__c>
+		<StartDate>[@TODAY]</StartDate>
+		<ContractTerm type="integer">12</ContractTerm>
+		<CurrencyIsoCode>JPY</CurrencyIsoCode>
+		<Pricebook2Id>01s30000000HjCS</Pricebook2Id> <!-- Price book id for CPQ - Direct - Commercial - Ohana - WW - JPY -->
+		<AutoRenewCode>No</AutoRenewCode>
+		<BillingLastName>TestAutomation</BillingLastName>
+		<BillingLanguage>ja</BillingLanguage>
+		<BillingStreet>1234 test</BillingStreet>
+		<BillingCity>San Francisco</BillingCity>
+		<BillingState>CA</BillingState>
+		<BillingPostalCode>94001</BillingPostalCode>
+		<BillingCountry>JP</BillingCountry>
+		<sfbase__PaymentType__c>DirectDebit</sfbase__PaymentType__c>
+		<BillingEmail>qatestingemail@salesforce.com</BillingEmail>
+		<ShippingStreet>1234 test</ShippingStreet>
+		<ShippingCity>San Francisco</ShippingCity>
+		<ShippingState>Tokyo</ShippingState>
+		<ShippingPostalCode>94001</ShippingPostalCode>
+		<ShippingCountry>JP</ShippingCountry>
+		<PaymentTerm>Net30</PaymentTerm>
+		<sfbase__PO_Number__c>1234</sfbase__PO_Number__c>
+		<OrderPrebillDays type="integer">15</OrderPrebillDays>
+		<sfbase__Billing_Frequency__c>3</sfbase__Billing_Frequency__c>
+		<sfbase__Customer_VAT_Number__c>1234</sfbase__Customer_VAT_Number__c>
+	</sfdcObject>
+	<sfdcObject type="Order" key="Order3">
+		<ContractId>[@ContractId]</ContractId>	
+		<Status>Draft</Status>
+		<RecordTypeId replacewithSFId="true">New Business</RecordTypeId>
+		<EffectiveDate>[@TODAY]</EffectiveDate>
+		<Order_Sub_Type__c>New</Order_Sub_Type__c>
+		<sfbase__CustomerPORequired__c>N/A</sfbase__CustomerPORequired__c>
+		<Type>Add</Type>
+		<Process_SCE__c type="checkbox">True</Process_SCE__c>
+	</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem13">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u3000000L5aXX</PriceBookEntryId> <!-- This id is for a Premier+ product listed in CPQ - Direct - Commercial - Ohana - WW - JPY -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="OrderItem" key="OrderItem14">
+		<OrderId>[@OrderId]</OrderId>
+		<PriceBookEntryId>01u9A000000W9OA</PriceBookEntryId> <!-- This id is for a Platinum product listed in CPQ - Direct - Commercial - Ohana - WW - JPY -->
+		<Quantity>30</Quantity>
+		<UnitPrice>0</UnitPrice>
+		</sfdcObject>
+	<sfdcObject type="Case" key="Case1">
+		<RecordTypeId replacewithSFId="true">Support</RecordTypeId>
+		<AccountId>[@AccountId]</AccountId>
+		<ContactId>[@Contact]</ContactId>
+		<Severity_Level__c>Level 1 - Critical</Severity_Level__c>
+		<Status>New</Status>
+		<Stage__c>5 - Scheduling Delivery</Stage__c>
+		<Reason>Sales Request</Reason>
+		<Origin>Pilots</Origin>
+		<Success_Program__c>[@SuccessProgramId]</Success_Program__c>
+		<FunctionalArea__c>Billing Inquiry</FunctionalArea__c>
+		<General_Application_Area__c>Sales Request</General_Application_Area__c>
+		<Location__c>United States</Location__c>
+		<Delivery_Timezone__c>(GTM-08:00)Pacific Standard Time(America/Los_Angeles)</Delivery_Timezone__c>
+		<Requested_Delivery_Date__c>[@TODAY]</Requested_Delivery_Date__c>
+		<Forecast__c>Pipeline</Forecast__c>
+		<Goals__c>20</Goals__c>
+		<Delivery_Language__c>English</Delivery_Language__c>
+	</sfdcObject>
+	<sfdcObject type="Case" key="Case2">
+		<RecordTypeId replacewithSFId="true">Support</RecordTypeId>
+		<AccountId>[@AccountId]</AccountId>
+		<ContactId>[@Contact]</ContactId>
+		<Severity_Level__c>Level 1 - Critical</Severity_Level__c>
+		<Status>New</Status>
+		<Stage__c>5 - Scheduling Delivery</Stage__c>
+		<Reason>Sales Request</Reason>
+		<Origin>Pilots</Origin>
+		<Success_Program__c>[@SuccessProgramId]</Success_Program__c>
+		<FunctionalArea__c>Billing Inquiry</FunctionalArea__c>
+		<General_Application_Area__c>Sales Request</General_Application_Area__c>
+		<Location__c>United States</Location__c>
+		<Delivery_Timezone__c>(GTM-08:00)Pacific Standard Time(America/Los_Angeles)</Delivery_Timezone__c>
+		<Requested_Delivery_Date__c>[@TODAY]</Requested_Delivery_Date__c>
+		<Forecast__c>Pipeline</Forecast__c>
+		<Goals__c>20</Goals__c>
+		<Delivery_Language__c>English</Delivery_Language__c>
+	</sfdcObject>
+	</TestDataSet1>
+	</TestCase1>
+	</SFDCObjectList>

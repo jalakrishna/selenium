@@ -1,0 +1,14 @@
+{
+
+	"logininfo" :
+		{
+			"username": "jala",
+			"password": "******"
+		},
+	"oAuthpoints":
+		{
+			"qa": "test.salesforce.com",
+			"uat": "uat.salesforce.com"
+		}
+
+}

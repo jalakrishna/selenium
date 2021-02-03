@@ -1,4 +1,4 @@
-package com.selenium.restassured;
+    package com.selenium.restassured;
 
 import org.testng.annotations.Test;
 
@@ -6,6 +6,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class TestGet {
+	
+
 	
 	@Test
 	public void sampleTestGet() {
@@ -18,6 +20,7 @@ public class TestGet {
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getHeader("content-type"));
 		System.out.println(response.getTime());
+		
 	
 	}
 
