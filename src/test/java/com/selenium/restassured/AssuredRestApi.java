@@ -1,4 +1,4 @@
-package com.selenium.restassured;
+    package com.selenium.restassured;
 
 import org.json.JSONObject;
 import org.testng.annotations.Test;
