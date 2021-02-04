@@ -18,9 +18,14 @@ public class reverseNumber {
 	public static void main(String[] args) {
 		
 		reverseNumber rn = new reverseNumber();
-		System.out.println(rn.reverseNumber(54567));
+		System.out.println(rn.reverseNumber(6546464));
 		
 		
 	}
+	
+	
+	
+	
+	
 
 }
