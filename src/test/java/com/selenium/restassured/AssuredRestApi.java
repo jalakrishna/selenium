@@ -46,5 +46,6 @@ public class AssuredRestApi {
 		then().log().all();
 	
 	}
+	
 
 }

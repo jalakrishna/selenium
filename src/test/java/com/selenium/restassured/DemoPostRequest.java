@@ -1,9 +1,13 @@
 package com.selenium.restassured;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
+import io.restassured.specification.RequestSpecification;
 import net.bytebuddy.implementation.bytecode.assign.Assigner.EqualTypesOnly;
 import static io.restassured.RestAssured.*;
 import org.testng.annotations.BeforeClass;
@@ -61,6 +65,31 @@ public class DemoPostRequest {
 		.post("services/data/v44.0/sobjects/Account")
 		.then().log().all();		
 		
+		
+		// given().queryParam("", "").header("","").header("","").body("").when().post().then().log().all();
+		//String response = given().queryParam("", "").header("","").header("","").body("").when().get().then().log().all().extract().response().asString();
+		
 	}
+	
+	@Test
+	public void getStaticJsonData() throws IOException {
+		
+		byte[] biteformat = Files.readAllBytes(Path.of(System.getProperty("user.dir") +"/src/main/resources/testdata/sfdc/sfdctestdata.json" ));
+		
+		
+		given().header("","").body("").when().put("Specify URI").then().extract().response().asString();
+		given().header("","").body("").when().patch("").then().extract().response().asString();
+		
+		
+		String jout = new String(Files.readAllBytes(Path.of(System.getProperty("user.dir") +"/src/main/resources/testdata/sfdc/SampleJsonFile.json" )));
+	
+	String jsonout = given().header("","").body(biteformat).when().post("").then().extract().response().asString();
+	
+	System.out.println("JSON ** OUT :" +jout);
+		
+	}
+	
+	
+
 
 }
