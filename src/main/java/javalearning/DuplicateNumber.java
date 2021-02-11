@@ -15,6 +15,8 @@ public class DuplicateNumber {
 			number.add(i);
 		}
 		number.add(3);
+		number.add(5);
+		number.add(5);
 		 double[] mydoubleList = {2.2,1.2,3.3,5.4,4.6};
 		 int[] myIntList = {3,6,7,3,8};
 		 Integer[] myIntegerslist = {5,6,8,3,11};
@@ -25,6 +27,8 @@ public class DuplicateNumber {
 	}
 
 	private void findDuplicateNumber(List<Integer> number) {
+		System.out.println(number);
+		
 		int n = number.size()-1;
 		int dup= n * (n+1)/2;
 		System.out.println("DUP  " +dup);
