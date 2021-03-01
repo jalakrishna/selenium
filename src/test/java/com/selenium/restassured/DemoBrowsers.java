@@ -1,5 +1,8 @@
 package com.selenium.restassured;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,9 +36,18 @@ public class DemoBrowsers extends Base{
 		driver.get("https://login.salesforce.com/");
 		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("focusonforce@salesforce.com");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Sales234@#$");
+		driver.findElement(By.xpath("//a[@id='privacy-link']")).click();
+		Set<String> windowhandles = driver.getWindowHandles();
+		Iterator<String> iterator = windowhandles.iterator();
+		boolean hasnext = iterator.hasNext();
+		if(hasnext) {
+			String windowhandle = driver.getWindowHandle();
+			driver.switchTo().window(windowhandle).close();
+			driver.close();
+		}
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
 		
-		driver.close();
+		//driver.close();
 		//driver.quit();
 	}
 
